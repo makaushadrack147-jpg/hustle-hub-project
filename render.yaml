@@ -24,13 +24,13 @@ services:
       - key: ADMIN_PASSWORD
         sync: false
       - key: FRONTEND_URL
-        value: https://hustle-hub-kenya.onrender.com
+        value: https://hustle-hub-kenya-9gin.onrender.com
       - key: MPESA_ENV
         value: sandbox
       - key: MPESA_TRANSACTION_TYPE
         value: CustomerPayBillOnline
       - key: CORS_ORIGINS
-        value: https://hustle-hub-kenya.onrender.com
+        value: https://hustle-hub-kenya-9gin.onrender.com
 
   - type: web
     name: hustle-hub-kenya
@@ -44,7 +44,7 @@ services:
         destination: /marketplace.html
     envVars:
       - key: VITE_API_URL
-        value: https://hustle-hub-api.onrender.com
+        value: https://hustle-hub-api-9gin.onrender.com
 
 databases:
   - name: hustle-hub-db
