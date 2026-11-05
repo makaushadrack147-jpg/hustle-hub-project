@@ -4,7 +4,7 @@ services:
     runtime: node
     rootDir: backend
     region: singapore
-    plan: starter
+    plan: free
     buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /api/health
@@ -49,6 +49,6 @@ services:
 databases:
   - name: hustle-hub-db
     region: singapore
-    plan: basic-256mb
+    plan: free
     databaseName: hustle_hub
     user: hustle_hub
