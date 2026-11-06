@@ -627,10 +627,10 @@ app.post('/api/auth/reset-password', passwordResetLimiter, async (request, respo
   }
 })
 
-app.post('/api/auth/logout', authenticate(pool), async (request, response) => {
+app.post('/api/auth/logout', async (request, response) => {
   const token = readSessionToken(request)
-  if (token) await pool.query('DELETE FROM sessions WHERE token_hash = $1', [hashSessionToken(token)])
   clearSessionCookie(response)
+  if (token) await pool.query('DELETE FROM sessions WHERE token_hash = $1', [hashSessionToken(token)])
   response.json({ status: 'signed out' })
 })
 
